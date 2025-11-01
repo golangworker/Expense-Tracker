@@ -77,21 +77,23 @@ func (l *list) ShowForMonthExpenses(month string) error {
 // метод для загрузки данных из файла
 func (l *list) LoadFromFile() error {
 	_, err := os.Stat(FILE_NAME)
-	switch err {
-	case nil:
+	if err == nil {
+		// файл есть, читаем содержимое
 		data, _ := os.ReadFile(FILE_NAME)
 		json.Unmarshal(data, &l.Expenses)
 		return nil
-	case os.ErrNotExist:
+	}
+	if os.IsNotExist(err) {
+		// файла нет — создаём
 		f, err := os.Create(FILE_NAME)
 		if err != nil {
 			return err
 		}
 		defer f.Close()
 		return nil
-	default:
-		return fmt.Errorf("error loading data from file: %w", err)
 	}
+	// любая другая ошибка
+	return fmt.Errorf("error loading data from file: %w", err)
 }
 
 // метод для сохранения данных
