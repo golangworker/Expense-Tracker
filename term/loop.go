@@ -28,7 +28,7 @@ func RunningLoop(args []string) error {
 			return fmt.Errorf("Invalid amount")
 		}
 		if err := add(description, amount); err != nil {
-			return fmt.Errorf("Error adding expense:", err)
+			return fmt.Errorf("Error adding expense: %v", err)
 		}
 
 	case "--delete", "-d":
@@ -40,7 +40,7 @@ func RunningLoop(args []string) error {
 			return fmt.Errorf("Invalid id")
 		}
 		if err := delete(id); err != nil {
-			return fmt.Errorf("Error deleting expense:", err)
+			return fmt.Errorf("Error deleting expense: %v", err)
 		}
 
 	case "--edit", "-e":
