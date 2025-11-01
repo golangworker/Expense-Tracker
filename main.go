@@ -2,10 +2,13 @@ package main
 
 import (
 	"app/logic"
-	"fmt"
 )
 
 func main() {
-	expence := logic.Init("Sosal", 6.66)
-	fmt.Println(expence)
+	expence := logic.InitExpence("Sosal", 6.66)
+	list := logic.InitList()
+	list.LoadFromFile()
+	list.Add(expence)
+	list.ShowAllExpenses()
+	list.SaveToFile()
 }
