@@ -29,7 +29,7 @@ Example: app --summary
 Example: app --month_summary "January"
 
 
-## Last version: 2.11.2025 github.com/golangworker/Expense-Tracker
+### Last version: 2.11.2025 github.com/golangworker/Expense-Tracker
 
 ## Author
 Aristarkhov Vladimir
