@@ -2,31 +2,31 @@
 
 ## Expense-Tracker - app for tracking personal expences
 
-## Available commands:
+### Available commands:
 
-### • --help, -h info about program
+• --help, -h info about program
 
-#### Example: app --add "Groceries" 50
+Example: app --add "Groceries" 50
 
-### • --add, -a (description string, amount float) create new expense
+• --add, -a (description string, amount float) create new expense
 
-#### Example: app --add "Groceries" 50
+Example: app --add "Groceries" 50
 
-### • --delete, -d (id int) delete expense
+• --delete, -d (id int) delete expense
 
-#### Example: app --delete 1
+Example: app --delete 1
 
-### • --edit, -e (id int, amount float) edit expense
+• --edit, -e (id int, amount float) edit expense
 
-#### Example: app --edit 1 50
+Example: app --edit 1 50
 
-### • --summary, -s show list of expenses
+• --summary, -s show list of expenses
 
-#### Example: app --summary
+Example: app --summary
 
-### • --month_summary, -ms (month string) show list of expenses by month
+• --month_summary, -ms (month string) show list of expenses by month
 
-#### Example: app --month_summary "January"
+Example: app --month_summary "January"
 
 
 ## Last version: 2.11.2025 github.com/golangworker/Expense-Tracker
