@@ -27,6 +27,7 @@ func InitList() list {
 // метод для нового расхода в мапе
 func (l *list) Add(e expence) {
 	l.Expenses[e.ID] = e
+	fmt.Println("Expense added successfully")
 }
 
 // метод для обновления расхода
@@ -35,6 +36,7 @@ func (l *list) Update(id int, amount float64) error {
 		e := l.Expenses[id]
 		e.Update(amount)
 		l.Expenses[id] = e
+		fmt.Println("Expense updated successfully")
 		return nil
 	}
 	return fmt.Errorf("expense with id %d not found", id)
@@ -44,6 +46,7 @@ func (l *list) Update(id int, amount float64) error {
 func (l *list) Delete(id int) error {
 	if _, ok := l.Expenses[id]; ok {
 		delete(l.Expenses, id)
+		fmt.Println("Expense deleted successfully")
 		return nil
 	}
 	return fmt.Errorf("expense with id %d not found", id)
