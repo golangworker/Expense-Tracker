@@ -12,3 +12,5 @@ func main() {
 		fmt.Println(err)
 	}
 }
+
+// version 2.11.2025 by Vladimir Aristarkhov
