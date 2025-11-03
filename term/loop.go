@@ -52,6 +52,12 @@ func RunningLoop(args []string) error {
 			return fmt.Errorf("error showing summary: %w", err)
 		}
 	case "--month_summary", "-ms":
+		if len(args) != 3 {
+			return ErrUseHelp
+		}
+		if err := monthSummary(args[2]); err != nil {
+			return fmt.Errorf("error showing month summary: %w", err)
+		}
 	default:
 		return ErrUseHelp
 	}
@@ -61,7 +67,6 @@ func RunningLoop(args []string) error {
 func help() {
 	fmt.Printf("Available commands:\n\n")
 	fmt.Printf("• \033[1m--help, -h\033[0m info about program\n\n")
-	fmt.Printf("Example: app --add \"Groceries\" 50\n\n")
 
 	fmt.Printf("• \033[1m--add, -a\033[0m (description string, amount float) create new expense\n\n")
 	fmt.Printf("Example: app --add \"Groceries\" 50\n\n")
